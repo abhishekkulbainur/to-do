@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Tracker - Bible Reading & Tasks</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="date-header">
+                <h1 id="display-date">March 23, 2026</h1>
+                <div class="date-controls">
+                    <button id="prev-day" class="btn-nav">←</button>
+                    <button id="today-btn" class="btn-today">Today</button>
+                    <button id="next-day" class="btn-nav">→</button>
+                </div>
+                <div class="picker-container">
+                    <input type="date" id="date-picker" min="2026-03-23" max="2026-12-31">
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Bible Reading Section -->
+            <section class="card" id="bible-section">
+                <div class="card-header">
+                    <span class="icon">📖</span>
+                    <h2>Bible Reading</h2>
+                </div>
+                <div class="task-list" id="bible-tasks">
+                    <!-- Chapters will be injected here -->
+                </div>
+            </section>
+
+            <!-- Spiritual Section -->
+            <section class="card" id="spiritual-section">
+                <div class="card-header">
+                    <span class="icon">🙏</span>
+                    <h2>Spiritual Life</h2>
+                </div>
+                <div class="task-list">
+                    <label class="task-item">
+                        <input type="checkbox" id="prayer-checkbox">
+                        <span class="checkmark"></span>
+                        <span class="task-text">Prayer (30 min)</span>
+                    </label>
+                    <label class="task-item">
+                        <input type="checkbox" id="declaration-checkbox">
+                        <span class="checkmark"></span>
+                        <span class="task-text">Word Declaration</span>
+                    </label>
+                </div>
+                <div class="custom-tasks-container">
+                    <h3>Custom Spiritual Tasks</h3>
+                    <div class="task-list" id="custom-tasks"></div>
+                    <div class="add-task-row">
+                        <input type="text" id="custom-task-input" placeholder="Add custom spiritual task...">
+                        <button id="add-custom-task" class="btn-add">+</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Studies Section -->
+            <section class="card" id="studies-section">
+                <div class="card-header">
+                    <span class="icon">📚</span>
+                    <h2>Studies</h2>
+                </div>
+                <div class="task-list" id="study-tasks"></div>
+                <div class="add-task-row">
+                    <input type="text" id="study-task-input" placeholder="Add study task...">
+                    <button id="add-study-task" class="btn-add">+</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

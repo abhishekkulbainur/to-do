@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Color System */
+  --primary-h: 243;
+  --primary-s: 75%;
+  --primary-l: 59%;
+  --primary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  --primary-glow: hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.3);
+  
+  --secondary-h: 270;
+  --secondary-s: 91%;
+  --secondary-l: 65%;
+  --secondary: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-l));
+  
+  --accent: #fbbf24;
+  --success: #10b981;
+  --danger: #ef4444;
+  
+  --bg: #0b0f1a;
+  --card-bg: rgba(15, 23, 42, 0.6);
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  
+  /* Glassmorphism */
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-highlight: rgba(255, 255, 255, 0.05);
+  
+  /* Spacing & Borders */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  
+  /* Animation */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Inter', 'Outfit', sans-serif;
+  background-color: var(--bg);
+  background-image: 
+    radial-gradient(circle at 0% 0%, hsla(243, 75%, 20%, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 100% 0%, hsla(270, 91%, 20%, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 100%, hsla(243, 75%, 10%, 0.2) 0%, transparent 50%);
+  background-attachment: fixed;
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+}
+
+::selection {
+  background: var(--primary-glow);
+  color: white;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-glow);
+}
+
+@media (max-width: 640px) {
+    :root {
+        --radius-lg: 20px;
+    }
+}
